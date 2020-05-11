@@ -20,7 +20,7 @@ export default {
             this.$emit('add', this.title)
 
             // 调用自定义事件
-            event.$emit('onAddTitle', this.title)
+            event.$emit('onAddTitle','xxxx')
 
             this.title = ''
         }

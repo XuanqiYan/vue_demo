@@ -1,7 +1,7 @@
 <template>
     <div>
         <p :class="{ black: isBlack, yellow: isYellow }">使用 class</p>
-        <p :class="[black, yellow]">使用 class （数组）【 class名 , class 名】</p>
+        <p :class="['black', yellow]">使用 class （数组）【 class名 , class 名】</p>
         <p :style="styleData">使用 style</p>
     </div>
 </template>
@@ -14,7 +14,7 @@
 export default {
     data() {
         return {
-            isBlack: true,
+            isBlack: false,
             isYellow: true,
 
             black: 'black',

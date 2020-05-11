@@ -1,9 +1,9 @@
 <template>
     <div>
         <p>输入框: {{name}}</p>
-        <input type="text" v-model.trim="name"/>
-        <input type="text" v-model.lazy="name"/>
-        <input type="text" v-model.number="age"/>
+        <input type="text" v-model.trim="name"  />
+        <input type="text" v-model.lazy="name" @change='test'/>
+        <input type="text" v-model.number="age" @input='test1'/>
 
         <p>多行文本: {{desc}}</p>
         <textarea v-model="desc"></textarea>
@@ -29,17 +29,17 @@
         <p>下拉列表选择 {{selected}}</p>
         <select v-model="selected">
             <option disabled value="">请选择</option>
-            <option>A</option>
-            <option>B</option>
-            <option>C</option>
+            <option value='A'>A</option>
+            <option value='B'>B</option>
+            <option value='C'>C</option>
         </select>
 
         <p>下拉列表选择（多选） {{selectedList}}</p>
         <select v-model="selectedList" multiple>
             <option disabled value="">请选择</option>
-            <option>A</option>
-            <option>B</option>
-            <option>C</option>
+            <option value='A'>A</option>
+            <option value='B'>B</option>
+            <option value='C'>C</option>
         </select>
     </div>
 </template>
@@ -48,18 +48,27 @@
 export default {
     data() {
         return {
-            name: '双越',
+            name: 'yan',
             age: 18,
             desc: '自我介绍',
 
-            checked: true,
-            checkedNames: [],
+            checked: false,
+            checkedNames: ['Jack','John'],
 
             gender: 'male',
 
-            selected: '',
-            selectedList: []
+            selected: 'C',
+            selectedList: ['B','C']
         }
-    }
+    },
+	methods:{
+		test(){
+			console.log('xxx')
+		},
+		test1(){
+			console.log(typeof this.age)
+		}
+		
+	}
 }
 </script>

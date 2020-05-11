@@ -9,8 +9,5 @@
 <script>
 export default {
     props: ['url'],
-    data() {
-        return {}
-    }
 }
 </script>

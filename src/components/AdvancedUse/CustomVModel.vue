@@ -1,8 +1,7 @@
 <template>
-    <!-- 例如：vue 颜色选择 -->
     <input type="text"
-        :value="text1"
-        @input="$emit('change1', $event.target.value)"
+        :value="text"
+        @input="$emit('change', $event.target.value)"
     >
     <!--
         1. 上面的 input 使用了 :value 而不是 v-model
@@ -14,11 +13,11 @@
 <script>
 export default {
     model: {
-        prop: 'text1', // 对应 props text1
-        event: 'change1'
+        prop: 'text', // 对应 props text1
+        event: 'change'
     },
     props: {
-        text1: String,
+        text: String,
         default() {
             return ''
         }

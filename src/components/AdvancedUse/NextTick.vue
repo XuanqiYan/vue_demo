@@ -22,13 +22,19 @@ export default {
         this.list.push(`${Date.now()}`)
         this.list.push(`${Date.now()}`)
         this.list.push(`${Date.now()}`)
+		
+		
+		const ulElem = this.$refs.ul1
+		
+		console.log( ulElem.childNodes.length )
 
-        // 1. 异步渲染，$nextTick 待 DOM 渲染完再回调
-        // 3. 页面渲染时会将 data 的修改做整合，多次 data 修改只会渲染一次
+        /* 1. 异步渲染，data改变后dom不会立即渲染 ，dom 的渲染是一个异步过程
+		   2. 待 DOM 异步渲染完再执行$nextTick回调 
+           3. 页面渲染时会将 data 的修改做整合，多次 data修改只会渲染一次，提高性能
+				push 了3次 但是执行nextTick 只执行一次
+		*/	  
         this.$nextTick(() => {
-          // 获取 DOM 元素
           const ulElem = this.$refs.ul1
-          // eslint-disable-next-line
           console.log( ulElem.childNodes.length )
         })
     }

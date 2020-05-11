@@ -15,6 +15,11 @@
 </template>
 
 <script>
+	/*
+		v-html 会覆盖内部标签的内容
+		xss 攻击： 网页潜入标签 标签可能存在一些风险
+		
+	*/
 export default {
     data() {
         return {

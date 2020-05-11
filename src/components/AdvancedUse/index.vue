@@ -4,21 +4,24 @@
         <hr>
 
         <!-- 自定义 v-model -->
-        <!-- <p>{{name}}</p>
-        <CustomVModel v-model="name"/> -->
+        <p>{{name}}</p>
+        <CustomVModel v-model="name"/> 
 
         <!-- nextTick -->
-        <!-- <NextTick/> -->
+        <NextTick/>
 
         <!-- slot -->
-        <!-- <SlotDemo :url="website.url">
+        <SlotDemo :url="website.url">
+			<!-- 父组件传递 自身的数据到子组建-->
             {{website.title}}
-        </SlotDemo> -->
-        <!-- <ScopedSlotDemo :url="website.url">
-            <template v-slot="slotProps">
-                {{slotProps.slotData.title}}
+        </SlotDemo>
+		
+        <ScopedSlotDemo :url="website.url">
+			<!--父组件传递的是子组件的数据 -->
+            <template v-slot="xxx">
+                {{xxx.ooo.title}}
             </template>
-        </ScopedSlotDemo> -->
+        </ScopedSlotDemo>
 
         <!-- 动态组件 -->
         <!-- <component :is="NextTickName"/> -->
@@ -36,33 +39,33 @@
 </template>
 
 <script>
-// import CustomVModel from './CustomVModel'
-// import NextTick from './NextTick'
-// import SlotDemo from './SlotDemo'
-// import ScopedSlotDemo from './ScopedSlotDemo'
+import CustomVModel from './CustomVModel'
+import NextTick from './NextTick'
+import SlotDemo from './SlotDemo'
+import ScopedSlotDemo from './ScopedSlotDemo'
 // import KeepAlive from './KeepAlive'
-import MixinDemo from './MixinDemo'
+// import MixinDemo from './MixinDemo'
 
 export default {
     components: {
-        // CustomVModel
-        // NextTick
-        // SlotDemo,
-        // ScopedSlotDemo,
+        CustomVModel
+        NextTick
+        SlotDemo,
+        ScopedSlotDemo,
         // FormDemo: () => import('../BaseUse/FormDemo'),
         // KeepAlive
-        MixinDemo
+        // MixinDemo
     },
     data() {
         return {
-            name: '双越',
+            name: 'xuanqiyan',
             website: {
-                url: 'http://imooc.com/',
-                title: 'imooc',
-                subTitle: '程序员的梦工厂'
+                url: 'xuanqiyan.com',
+                title: 'xuanqiyan',
+                subTitle: 'mianshi...'
             },
             // NextTickName: "NextTick",
-            showFormDemo: false
+            // showFormDemo: false
         }
     }
 }

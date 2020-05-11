@@ -8,9 +8,9 @@
         </ul>
 
         <p>遍历对象</p>
-        <ul >   --> 可以在这里v-if 
-            <li v-for="(val, key, index) in listObj" :key="key"> --> 不可以在这里v-if  因为v-for运算级别闭v-if高 
-				--> 可以在这里v-if 
+        <ul   v-if='flag' >  
+            <li v-for="(val, key, index) in listObj" :key="val.id"> 
+			
                 {{index}} - {{key}} -  {{val.title}}
             </li>
         </ul>
@@ -21,7 +21,8 @@
 	/*
 		如何遍历对象
 		key的重要性 (key不能乱写 如random  index  和实体相关的值 如 Id)
-		v-for 和 v-if 不能一起使用
+		v-for 和 v-if 最好不要 一起使用
+			因为： v-for运算级别比v-if高  ，可能造成性能浪费
 	*/
 export default {
     data() {
@@ -33,9 +34,9 @@ export default {
                 { id: 'c', title: '标题3' }
             ],
             listObj: {
-                a: { title: '标题1' },
-                b: { title: '标题2' },
-                c: { title: '标题3' },
+                a: { id:1, title: '标题1' },
+                b: { id:2, title: '标题2' },
+                c: { id:3, title: '标题3' },
             }
         }
     }

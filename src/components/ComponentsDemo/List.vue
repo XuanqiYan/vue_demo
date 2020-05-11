@@ -31,6 +31,7 @@ export default {
     },
     methods: {
         deleteItem(id) {
+			
             this.$emit('delete', id)
         },
         addTitleHandler(title) {
@@ -39,26 +40,25 @@ export default {
         }
     },
     created() {
-        // eslint-disable-next-line
         console.log('list created')
     },
     mounted() {
-        // eslint-disable-next-line
+        
         console.log('list mounted')
 
         // 绑定自定义事件
         event.$on('onAddTitle', this.addTitleHandler)
     },
     beforeUpdate() {
-        // eslint-disable-next-line
+       
         console.log('list before update')
     },
     updated() {
-        // eslint-disable-next-line
         console.log('list updated')
     },
+	//生命周期钩子
     beforeDestroy() {
-        // 及时销毁，否则可能造成内存泄露
+        // 及时销毁自己绑定的自定义事件，否则可能造成内存泄露
         event.$off('onAddTitle', this.addTitleHandler)
     }
 }

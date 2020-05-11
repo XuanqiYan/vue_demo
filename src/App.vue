@@ -6,36 +6,50 @@
     <!-- <TplDemo/> -->
     <!-- <ConditionDemo/> -->
     <!-- <EventDemo/> -->
-
-    <!-- <ComponentDemo/> -->
+	<!-- <ComputedDemo/> -->
+    <ComponentDemo/>
 
     <!-- <AdvancedUse/> -->
+	<!-- <Todo/> -->
 
-    <CartDemo/>
+    <!-- <CartDemo/> -->
+	<!-- <WatchDemo /> -->
+	<!-- <ListDemo /> -->
+	<!-- <FormDemo /> -->
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 
-// import TplDemo from './components/BaseUse/TplDemo'
+ import TplDemo from './components/BaseUse/TplDemo'
 // import ConditionDemo from './components/BaseUse/ConditionDemo'
-// import EventDemo from './components/BaseUse/EventDemo'
+import EventDemo from './components/BaseUse/EventDemo'
 
-// import ComponentDemo from './components/ComponentsDemo/index'
+import ComponentDemo from './components/ComponentsDemo/index'
 
 // import AdvancedUse from './components/AdvancedUse/index'
-
+import Todo from './components/BaseUse/Todo.vue'
 import CartDemo from './components/Cart/index'
-
+import ComputedDemo from './components/BaseUse/ComputedDemo.vue'
+import WatchDemo from './components/BaseUse/WatchDemo.vue'
+import ListDemo from './components/BaseUse/ListDemo.vue'
+import FormDemo from './components/BaseUse/FormDemo.vue'
+ 
 export default {
   name: 'app',
   components: {
+	WatchDemo,  
+	ComputedDemo, 
+	TplDemo,
+	ListDemo,
+	FormDemo,
     // HelloWorld
-    // EventDemo
-    // ComponentDemo
+    EventDemo,
+    ComponentDemo
     // AdvancedUse
-    CartDemo
+   // CartDemo,
+	//Todo
   }
 }
 </script>

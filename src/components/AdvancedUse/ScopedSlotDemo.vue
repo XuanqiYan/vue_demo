@@ -1,7 +1,7 @@
 <template>
     <a :href="url">
-        <slot :slotData="website">
-            {{website.subTitle}} <!-- 默认值显示 subTitle ，即父组件不传内容时 -->
+        <slot :ooo="website">
+            
         </slot>
     </a>
 </template>
@@ -12,9 +12,9 @@ export default {
     data() {
         return {
             website: {
-                url: 'http://wangEditor.com/',
-                title: 'wangEditor',
-                subTitle: '轻量级富文本编辑器'
+                url: 'http://baidu.com/',
+                title: 'baidu',
+                subTitle: '百度'
             }
         }
     }
