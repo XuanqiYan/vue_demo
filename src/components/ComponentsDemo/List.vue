@@ -57,7 +57,9 @@ export default {
         console.log('list updated')
     },
 	//生命周期钩子
+	
     beforeDestroy() {
+		console.log('list distory')	
         // 及时销毁自己绑定的自定义事件，否则可能造成内存泄露
         event.$off('onAddTitle', this.addTitleHandler)
     }

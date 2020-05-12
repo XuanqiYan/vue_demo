@@ -7,9 +7,9 @@
     <!-- <ConditionDemo/> -->
     <!-- <EventDemo/> -->
 	<!-- <ComputedDemo/> -->
-    <ComponentDemo/>
+    <!-- <ComponentDemo/> -->
 
-    <!-- <AdvancedUse/> -->
+    <AdvancedUse/>
 	<!-- <Todo/> -->
 
     <!-- <CartDemo/> -->
@@ -28,7 +28,7 @@ import EventDemo from './components/BaseUse/EventDemo'
 
 import ComponentDemo from './components/ComponentsDemo/index'
 
-// import AdvancedUse from './components/AdvancedUse/index'
+import AdvancedUse from './components/AdvancedUse/index'
 import Todo from './components/BaseUse/Todo.vue'
 import CartDemo from './components/Cart/index'
 import ComputedDemo from './components/BaseUse/ComputedDemo.vue'
@@ -39,15 +39,15 @@ import FormDemo from './components/BaseUse/FormDemo.vue'
 export default {
   name: 'app',
   components: {
-	WatchDemo,  
-	ComputedDemo, 
-	TplDemo,
-	ListDemo,
-	FormDemo,
-    // HelloWorld
-    EventDemo,
-    ComponentDemo
-    // AdvancedUse
+	// WatchDemo,  
+	// ComputedDemo, 
+	// TplDemo,
+	// ListDemo,
+	// FormDemo,
+ //    // HelloWorld
+ //    EventDemo,
+ //    ComponentDemo
+    AdvancedUse
    // CartDemo,
 	//Todo
   }

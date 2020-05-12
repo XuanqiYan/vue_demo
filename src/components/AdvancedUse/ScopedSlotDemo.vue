@@ -1,5 +1,5 @@
 <template>
-    <a :href="url">
+    <a >
         <slot :ooo="website">
             
         </slot>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    props: ['url'],
+ 
     data() {
         return {
             website: {

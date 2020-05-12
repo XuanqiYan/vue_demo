@@ -4,37 +4,40 @@
         <hr>
 
         <!-- 自定义 v-model -->
-        <p>{{name}}</p>
-        <CustomVModel v-model="name"/> 
+        <!-- <p>{{name}}</p> -->
+        <!-- <CustomVModel v-model="name"/> -->
 
         <!-- nextTick -->
-        <NextTick/>
+        <!-- <NextTick/> -->
 
         <!-- slot -->
-        <SlotDemo :url="website.url">
-			<!-- 父组件传递 自身的数据到子组建-->
-            {{website.title}}
-        </SlotDemo>
+     <!--  <SlotDemo :url="website.url">
+            <i>{{website.title}}</i>
+        </SlotDemo> -->
 		
-        <ScopedSlotDemo :url="website.url">
-			<!--父组件传递的是子组件的数据 -->
-            <template v-slot="xxx">
-                {{xxx.ooo.title}}
-            </template>
-        </ScopedSlotDemo>
+		<!-- 作用域插槽 父组件定义插槽模版的时候可能使用子组件的数据-->
+     <!--  <ScopedSlotDemo >
+			<template v-slot="xxx">
+				{{website.title}}
+				{{xxx.ooo.title}} 
+			</template>
+		
+        </ScopedSlotDemo> -->
 
         <!-- 动态组件 -->
-        <!-- <component :is="NextTickName"/> -->
+        <!-- <component :is="'NextTick'"/> -->
         
-        <!-- 异步组件 -->
-        <!-- <FormDemo v-if="showFormDemo"/>
-        <button @click="showFormDemo = true">show form demo</button> -->
+        <!-- 异步组件 动态路由 -->
+        <FormDemo v-if="showFormDemo"/>
+        <button @click="showFormDemo = true">show form demo</button>
+			
+		
 
         <!-- keep-alive -->
         <!-- <KeepAlive/> -->
 
         <!-- mixin -->
-        <MixinDemo/>
+        <!-- <MixinDemo/> -->
     </div>
 </template>
 
@@ -46,18 +49,29 @@ import ScopedSlotDemo from './ScopedSlotDemo'
 // import KeepAlive from './KeepAlive'
 // import MixinDemo from './MixinDemo'
 
+/*
+	import User from 'User'
+	动态路由
+	{
+		path:'/user/:id',
+		component: User
+	}
+		
+*/
 export default {
+	
     components: {
-        CustomVModel
-        NextTick
+        CustomVModel,
+        NextTick,
         SlotDemo,
         ScopedSlotDemo,
-        // FormDemo: () => import('../BaseUse/FormDemo'),
+        FormDemo: () => import('../BaseUse/FormDemo'),
         // KeepAlive
         // MixinDemo
     },
     data() {
         return {
+			c:'NextTick',	
             name: 'xuanqiyan',
             website: {
                 url: 'xuanqiyan.com',
@@ -65,7 +79,7 @@ export default {
                 subTitle: 'mianshi...'
             },
             // NextTickName: "NextTick",
-            // showFormDemo: false
+            showFormDemo: false
         }
     }
 }
