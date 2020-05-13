@@ -7,7 +7,7 @@ export default {
     methods: {
         showName() {
             // eslint-disable-next-line
-            console.log(this.name)
+            console.log('minxi',this.name)
         }
     },
     mounted() {

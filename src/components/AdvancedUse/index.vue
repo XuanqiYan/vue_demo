@@ -25,11 +25,11 @@
         </ScopedSlotDemo> -->
 
         <!-- 动态组件 -->
-        <!-- <component :is="'NextTick'"/> -->
+        <!-- <component is="NextTick"/> -->
         
         <!-- 异步组件 动态路由 -->
-        <FormDemo v-if="showFormDemo"/>
-        <button @click="showFormDemo = true">show form demo</button>
+        <!-- <FormDemo v-if="showFormDemo"/> -->
+        <!-- <button @click="showFormDemo = true">show form demo</button> -->
 			
 		
 
@@ -37,7 +37,7 @@
         <!-- <KeepAlive/> -->
 
         <!-- mixin -->
-        <!-- <MixinDemo/> -->
+        <MixinDemo/>
     </div>
 </template>
 
@@ -46,8 +46,8 @@ import CustomVModel from './CustomVModel'
 import NextTick from './NextTick'
 import SlotDemo from './SlotDemo'
 import ScopedSlotDemo from './ScopedSlotDemo'
-// import KeepAlive from './KeepAlive'
-// import MixinDemo from './MixinDemo'
+import KeepAlive from './KeepAlive'
+import MixinDemo from './MixinDemo'
 
 /*
 	import User from 'User'
@@ -66,8 +66,8 @@ export default {
         SlotDemo,
         ScopedSlotDemo,
         FormDemo: () => import('../BaseUse/FormDemo'),
-        // KeepAlive
-        // MixinDemo
+        KeepAlive,
+        MixinDemo
     },
     data() {
         return {
